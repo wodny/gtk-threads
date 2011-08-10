@@ -1,0 +1,21 @@
+Enabling a11y:
+/desktop/gnome/interface/accessibility = true
+export GTK_MODULES=gail:atk-bridge
+
+
+Hang column indicates if the GTK application has hung.
+Listed column indicates if the application is visible in the AT-SPI
+listing.
+
+                                  |   hang   | listed |
+----------------------------------+----------+--------+
+primarythread_gobject.py          |   no     |  yes   |
+primarythread_gtkgdk.py           |   no     |  yes   |
+secondarythread_gobject_import.py |   no [1] |  yes   |
+secondarythread_gobject.py        |   yes    |  hang  |
+secondarythread_gtkgdk_import.py  |   no [1] |  yes   |
+secondarythread_gtkgdk.py         |   yes    |  hang  |
+
+[1] ** (secondarythread_gobject_import.py:5828): CRITICAL **:
+giop_thread_request_push: assertion `tdata != NULL' failed
+  -- at the application termination
