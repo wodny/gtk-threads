@@ -15,6 +15,7 @@ secondarythread_gobject_import.py |   no [1] |  yes   |
 secondarythread_gobject.py        |   yes    |  hang  |
 secondarythread_gtkgdk_import.py  |   no [1] |  yes   |
 secondarythread_gtkgdk.py         |   yes    |  hang  |
+multiprocessing_gobject.py        |   no     |  yes   |
 
 [1] ** (secondarythread_gobject_import.py:5828): CRITICAL **:
 giop_thread_request_push: assertion `tdata != NULL' failed
