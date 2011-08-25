@@ -20,3 +20,10 @@ multiprocessing_gobject.py        |   no     |  yes   |
 [1] ** (secondarythread_gobject_import.py:5828): CRITICAL **:
 giop_thread_request_push: assertion `tdata != NULL' failed
   -- at the application termination
+
+
+Some links:
+http://www.daa.com.au/pipermail/pygtk/2009-June/017158.html
+https://bugzilla.gnome.org/show_bug.cgi?id=326545
+http://stackoverflow.com/questions/7010004/pygtk-threads-and-accessibility-application-hangs
+https://bugzilla.redhat.com/show_bug.cgi?id=231394
