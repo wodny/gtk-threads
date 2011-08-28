@@ -3,3 +3,4 @@ syntax: glob
 *.pyc
 cpp/primarythread
 cpp/secondarythread
+cpp/secondarythread_init
