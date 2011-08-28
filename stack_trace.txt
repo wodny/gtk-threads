@@ -1,0 +1,50 @@
+(gdb) thread 1
+[Switching to thread 1 (Thread 0xb71fb840 (LWP 3257))]#0  0xb7fe2424 in __kernel_vsyscall ()
+(gdb) bt
+#0  0xb7fe2424 in __kernel_vsyscall ()
+#1  0xb7676e65 in pthread_join () from /lib/i386-linux-gnu/i686/cmov/libpthread.so.0
+#2  0x08048b48 in main (argc=1, argv=0xbffff604) at secondarythread.cpp:45
+(gdb) thread 2
+[Switching to thread 2 (Thread 0xb6d5fb70 (LWP 3260))]#0  0xb7fe2424 in __kernel_vsyscall ()
+(gdb) bt
+#0  0xb7fe2424 in __kernel_vsyscall ()
+#1  0xb767a20a in pthread_cond_wait@@GLIBC_2.3.2 () from /lib/i386-linux-gnu/i686/cmov/libpthread.so.0
+#2  0xb6e632b3 in giop_recv_buffer_get () from /usr/lib/libORBit-2.so.0
+#3  0xb6e66ec3 in ORBit_small_invoke_stub () from /usr/lib/libORBit-2.so.0
+#4  0xb6e670fa in ORBit_small_invoke_stub_n () from /usr/lib/libORBit-2.so.0
+#5  0xb6e79d70 in ORBit_c_stub_invoke () from /usr/lib/libORBit-2.so.0
+#6  0xb6f390b4 in Accessibility_EventListener_notifyEvent () from /usr/lib/libspi.so.0
+#7  0xb7fdc3ac in ?? () from /usr/lib/gtk-2.0/modules/libatk-bridge.so
+#8  0xb7fdcb47 in ?? () from /usr/lib/gtk-2.0/modules/libatk-bridge.so
+#9  0xb7795273 in ?? () from /usr/lib/libgobject-2.0.so.0
+#10 0xb779e3f6 in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+#11 0xb779e5a2 in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+#12 0xb6fba31d in ?? () from /usr/lib/gtk-2.0/modules/libgail.so
+#13 0xb7d27984 in _gtk_marshal_BOOLEAN__BOXED (closure=0x80e1d10, return_value=0xb6d5ee04, n_param_values=2, param_values=0x80e3b40, invocation_hint=0xb6d5edf0, 
+    marshal_data=0xb6fba260) at /build/buildd-gtk+2.0_2.24.4-3-i386-ouUeDk/gtk+2.0-2.24.4/gtk/gtkmarshalers.c:86
+#14 0xb77829f2 in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+#15 0xb7795988 in ?? () from /usr/lib/libgobject-2.0.so.0
+#16 0xb779e17b in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+#17 0xb779e5a2 in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+#18 0xb7e5c5a6 in gtk_widget_event_internal (widget=0x80741b0, event=0x80e7790) at /build/buildd-gtk+2.0_2.24.4-3-i386-ouUeDk/gtk+2.0-2.24.4/gtk/gtkwidget.c:4980
+#19 0xb7d261ac in IA__gtk_main_do_event (event=0x80e7790) at /build/buildd-gtk+2.0_2.24.4-3-i386-ouUeDk/gtk+2.0-2.24.4/gtk/gtkmain.c:1638
+#20 0xb7ba605a in gdk_event_dispatch (source=0x8075c90, callback=0, user_data=0x0) at /build/buildd-gtk+2.0_2.24.4-3-i386-ouUeDk/gtk+2.0-2.24.4/gdk/x11/gdkevents-x11.c:2377
+#21 0xb76cd252 in g_main_context_dispatch () from /lib/libglib-2.0.so.0
+#22 0xb76cda30 in ?? () from /lib/libglib-2.0.so.0
+#23 0xb76ce0f3 in g_main_loop_run () from /lib/libglib-2.0.so.0
+#24 0xb7d24bd9 in IA__gtk_main () at /build/buildd-gtk+2.0_2.24.4-3-i386-ouUeDk/gtk+2.0-2.24.4/gtk/gtkmain.c:1256
+#25 0x08048a41 in second_thread (args=0x0) at secondarythread.cpp:13
+#26 0xb7675c39 in start_thread () from /lib/i386-linux-gnu/i686/cmov/libpthread.so.0
+#27 0xb75e296e in clone () from /lib/i386-linux-gnu/i686/cmov/libc.so.6
+(gdb) thread 3
+[Switching to thread 3 (Thread 0xb655eb70 (LWP 3261))]#0  0xb7fe2424 in __kernel_vsyscall ()
+(gdb) bt
+#0  0xb7fe2424 in __kernel_vsyscall ()
+#1  0xb75d4f86 in poll () from /lib/i386-linux-gnu/i686/cmov/libc.so.6
+#2  0xb76ddf5b in g_poll () from /lib/libglib-2.0.so.0
+#3  0xb76cd96f in ?? () from /lib/libglib-2.0.so.0
+#4  0xb76ce0f3 in g_main_loop_run () from /lib/libglib-2.0.so.0
+#5  0xb6e8029d in ?? () from /usr/lib/libORBit-2.so.0
+#6  0xb76f6b6f in ?? () from /lib/libglib-2.0.so.0
+#7  0xb7675c39 in start_thread () from /lib/i386-linux-gnu/i686/cmov/libpthread.so.0
+#8  0xb75e296e in clone () from /lib/i386-linux-gnu/i686/cmov/libc.so.6

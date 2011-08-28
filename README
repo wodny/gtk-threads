@@ -31,6 +31,11 @@ python/secondarythread_gtkgdk_import.py - cpp/secondarythread_init.cpp
 python/secondarythread_gtkgdk.py        - cpp/secondarythread.cpp
 
 
+Both for Python and C++ secondarythread variants seem to hang when using
+/usr/lib/libORBit-2.so.0. Only in this variant link_set_io_thread() 
+inside giop_thread_new_check() is called, which leads to executing 
+g_main_loop_run().
+
 
 Some links:
 http://www.daa.com.au/pipermail/pygtk/2009-June/017158.html
