@@ -7,19 +7,29 @@ Hang column indicates if the GTK application has hung.
 Listed column indicates if the application is visible in the AT-SPI
 listing.
 
-                                  |   hang   | listed |
-----------------------------------+----------+--------+
-primarythread_gobject.py          |   no     |  yes   |
-primarythread_gtkgdk.py           |   no     |  yes   |
-secondarythread_gobject_import.py |   no [1] |  yes   |
-secondarythread_gobject.py        |   yes    |  hang  |
-secondarythread_gtkgdk_import.py  |   no [1] |  yes   |
-secondarythread_gtkgdk.py         |   yes    |  hang  |
-multiprocessing_gobject.py        |   no     |  yes   |
+                                         |   hang   | listed |
+-----------------------------------------+----------+--------+
+python/primarythread_gobject.py          |   no     |  yes   |
+python/primarythread_gtkgdk.py           |   no     |  yes   |
+python/secondarythread_gobject_import.py |   no [1] |  yes   |
+python/secondarythread_gobject.py        |   yes    |  hang  |
+python/secondarythread_gtkgdk_import.py  |   no [1] |  yes   |
+python/secondarythread_gtkgdk.py         |   yes    |  hang  |
+python/multiprocessing_gobject.py        |   no     |  yes   |
+cpp/primarythread.cpp                    |   no     |  yes   |
+cpp/secondarythread.cpp                  |   yes    |  hang  |
+cpp/secondarythread_init.cpp             |   no [1] |  yes   |
 
 [1] ** (secondarythread_gobject_import.py:5828): CRITICAL **:
 giop_thread_request_push: assertion `tdata != NULL' failed
   -- at the application termination
+
+
+Analogies:
+python/primarythread_gtkgdk.py          - cpp/primarythread.cpp
+python/secondarythread_gtkgdk_import.py - cpp/secondarythread_init.cpp
+python/secondarythread_gtkgdk.py        - cpp/secondarythread.cpp
+
 
 
 Some links:

@@ -4,3 +4,4 @@ syntax: glob
 cpp/primarythread
 cpp/secondarythread
 cpp/secondarythread_init
+tmp
